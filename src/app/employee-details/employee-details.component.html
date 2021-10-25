@@ -1,0 +1,121 @@
+
+<html>
+<body>
+
+<nav class='navbar navbar-expand navbar-light bg-light style' style="height: 50px;">
+    
+    <div class="nbar">
+    {{numberTitle}}
+    {{nameTitle}}
+</div>
+    <div style="margin-left:40px">
+    {{NameTitle}}
+    <input type='text'  [(ngModel)]='nameFilter'  placeholder="Enter Name" style="margin-left: 40px;"/>
+</div>
+<div style="margin-left: 60px;">
+    {{cafeTitle}}
+</div>
+    <input type='text' [(ngModel)]='cafeFilter' placeholder="Enter YES?NO" style="margin-left: 50px;"/> 
+
+    
+</nav>
+  
+    
+ 
+ 
+
+<div class="container">
+    <div class="tab">
+        <ul>
+<li id="Employee" [class.color]="tabid ==='Employee'" (click)="toggle('Employee')">Employee</li>
+<li id="Cafeteria" [class.color]="tabid==='Cafeteria'" (click)="toggle('Cafeteria')">Cafeteria</li>
+
+        </ul>
+    </div>
+<br>
+<br>
+<div class="content"> 
+   
+    <div class='table-responsive' *ngIf="tabid === 'Employee'">
+<table class='table border'  *ngIf='namefiltered.length'>
+<thead>
+
+<th>Name</th>
+<th>PSNO</th>
+<th>Office Entry Time</th>
+<th>Vaccination Status</th>
+<th>Base Location</th>
+
+</thead>
+<tbody class='hoverTable' >
+<tr *ngFor='let emp of namefiltered '>
+ 
+<td style="cursor: pointer;">
+    <app-child [name]="emp.employeename" (nameClicked)='onNameClicked($event)' [psno]="emp.employeePSNO" (numberClicked)='onNumberClicked($event)'>|
+    </app-child>
+   
+</td>
+<td>
+   {{emp.employeePSNO}}
+   
+   
+</td>
+<td>{{ emp.employeeTiming }}</td>
+<td>{{ emp.vaccinationstatus}}</td>
+<td>{{ emp.baselocation}}</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+ 
+ </div>
+
+<div class='table-responsive' *ngIf="tabid === 'Cafeteria'">
+<table class='table border' *ngIf='cafefiltered.length' >
+<thead>
+
+<th> Name</th>
+<th>Entered</th>
+<th>Time Of Entry</th>
+<th>Food Pass (Granted ? Pending )</th>
+</thead>
+<tbody class="hoverTable" >
+<tr *ngFor='let caf of cafefiltered'>
+<td>
+{{caf.employeename}}
+
+</td>
+<td>{{ caf.EntryStatus}}</td>
+<td>{{ caf.employeeTiming }}</td>
+<td>{{caf.FoodPass}}</td>
+</tr>
+</tbody>
+
+</table>
+</div>
+</div>  
+
+<!-- <ag-grid-angular
+style="width:800px;height: 500px;"
+class="ag-theme-balham"
+[rowData]="rowData"
+[columnDefs]="columnDefs">
+
+
+</ag-grid-angular> -->
+<!-- <ag-grid-angular style="width:1000px;height: 500px;margin-left:200px;font-size: medium;" class="ag-theme-balham" [columnDefs]="columnDefs" [rowData]="rowData">
+</ag-grid-angular> -->
+<!-- </body>
+</html>
+ <div [ngStyle]="style" >
+    <ag-grid-angular
+            style="width: 200%; height:50%;margin-left: 200px;font-size: larger;"
+            #agGrid
+            class="ag-theme-balham"
+            [rowData]="rowData"
+            [columnDefs]="columnDefs"
+           
+    >
+    </ag-grid-angular>
+</div> -->

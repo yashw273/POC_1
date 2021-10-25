@@ -1,0 +1,104 @@
+thead
+{
+background-color:black;
+color: aliceblue;
+}
+
+.btn1 {
+transition-duration: 0.4s;
+margin-right: 160px;
+}
+.btn1:focus-within {
+    background-color: #4CAF50; /* Green */
+    color: white;
+  }
+
+.tab ul
+{
+  padding:10px;
+  background:#660066;
+  display:inline-block;
+  border-radius: 2px;
+  
+}
+
+.tab ul li
+{
+  display:inline-block;
+  /* border-right: 2px solid #fff; */
+  
+  color:#fff;
+  font-size: 16px;
+  padding: 0 24px;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+  border-left: 2px solid #fff;
+  
+  /* position: relative; */
+}
+
+
+.tab ul li:hover
+{
+  color: #FF9933
+}
+
+.color
+{
+  color: #FF9933!important;
+}
+
+ /* .content
+{
+  background: red;
+  padding: 20px;
+   border:1px solid rgb(233,5,100); 
+} 
+
+.content-value h2
+{
+  font-size: 22px;
+  font-weight: 600;
+} */
+
+.nbar
+{
+  position: fixed;
+  text-align: center;
+  right:10px;
+  /* border: 2px solid #85dcb8;
+  border-radius: 10px; */
+  padding: 5px;
+  
+}
+
+.namebar
+{
+  position: fixed;
+  text-align: center;
+  left:300px;
+}
+
+.cafename
+{
+  position: fixed;
+  text-align: center;
+  left:500px;
+}
+
+
+
+    .hoverTable tr:hover {
+          background-color: #ffff99;
+    }
+
+    html {
+      background-color: blue;
+    }
+
+    .table border
+    {
+      border: 20px;
+      border-color: black;
+    }

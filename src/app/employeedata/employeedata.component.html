@@ -1,0 +1,157 @@
+<nav class='navbar navbar-expand navbar-light bg-light style' style="height: 50px;">
+<div class="nbar">
+<p>
+  <button class="btn btn-primary " data-bs-toggle="collapse" href="#empfill" role="button" aria-expanded="false" aria-controls="collapseExample" style="margin-right: 600px;">
+  Add Details
+  </button>
+<button class="btn btn-primary" data-bs-toggle="collapse" href="#empremove" role="button" aria-expanded="true" aria-controls="collapseExample" >
+  Remove Details
+</button>
+</p>
+</div>
+</nav>
+<div class="container">
+
+  <div class="collapse" id="empfill"  >
+    
+    <div class="form-group">
+<form class="form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+    <!-- <label>
+      Employee Name:
+    </label>  -->
+    <div class="form-group">
+     <input id="EmpName" type="text"  class="form-control" formControlName="EmployeeName"  placeholder="Employee Name" style="width: 500px;">
+   
+    
+ 
+   <div *ngFor="let validation of validationMessages.EmployeeName">
+      <div *ngIf="loginForm.get('EmployeeName')?.hasError(validation.type) && (loginForm.get('EmployeeName')?.dirty || loginForm.get('EmployeeName')?.touched)">
+           <div style="color:red; font-size: medium;">{{validation.message}}</div> 
+           
+      </div>
+    </div>
+    </div>
+    <br>
+    <br>
+   
+    <!-- <label>
+      Employee PSNO:
+    </label>  -->
+    <div class="form-group">
+      <input id="EmpNo" type="text" class="form-control" formControlName="EmployeePSNO"  placeholder="Employee PSNO (8 Digit Employee Code)" style="width: 500px;">
+    
+  
+   <div *ngFor="let validation of validationMessages.EmployeePSNO">
+      <div *ngIf="loginForm.get('EmployeePSNO')?.hasError(validation.type) && (loginForm.get('EmployeePSNO')?.dirty || loginForm.get('EmployeePSNO')?.touched)">
+            <div style="color:red; font-size: medium;">{{validation.message}}</div>
+      </div>
+    </div>
+  </div>
+    <br>
+    <br>
+ 
+    <!-- <label>
+      Employee Timing:
+    </label>  -->
+    <div class="form-group">
+      <input id="EmpTime" type="text" class="form-control" formControlName="EmployeeTiming" placeholder="Employee Office Entry Time (HH:MM) Format" style="width: 500px;">
+   
+  
+   <div *ngFor="let validation of validationMessages.EmployeeTiming">
+      <div *ngIf="loginForm.get('EmployeeTiming')?.hasError(validation.type) && (loginForm.get('EmployeeTiming')?.dirty || loginForm.get('EmployeeTiming')?.touched)">
+            <div style="color:red; font-size: medium;">{{validation.message}}</div>
+      </div>
+    </div>
+  </div>
+    <br>
+    <br>
+    <!-- <label>
+      Employee Base Location:
+    </label>  -->
+    <div class="form-group">
+      <select id="EmpLocation" class="form-control" formControlName="EmployeeLocation" style="width: 500px;">
+
+        <option value="" selected hidden>
+          Employee Base Location
+        </option>
+        <option value="Pune">
+          Pune
+        </option >
+        <option value="Powai">
+          Powai
+        </option>
+        <option value="Chennai">
+          Chennai
+        </option>
+        <option value="Hyderabad">
+          Hyderabad
+        </option>
+
+   </select>
+  
+   <div *ngFor="let validation of validationMessages.EmployeeLocation">
+      <div *ngIf="loginForm.get('EmployeeLocation')?.hasError(validation.type) && (loginForm.get('EmployeePhone')?.dirty || loginForm.get('EmployeeLocation')?.touched)">
+            <div style="color:red;font-size: medium;">{{validation.message}}</div>
+      </div>
+    </div>
+  </div>
+    <br>
+    <br>
+    <!-- <label>
+      Employee Phone:
+    </label>  -->
+    <div class="form-group">
+      <input id="EmpPhone" type="text" class="form-control" formControlName="EmployeePhone" placeholder="Employee  PhoneNumber (10 Digit Number)" style="width: 500px;">
+   
+  
+   <div *ngFor="let validation of validationMessages.EmployeePhone">
+      <div *ngIf="loginForm.get('EmployeePhone')?.hasError(validation.type) && (loginForm.get('EmployeePhone')?.dirty || loginForm.get('EmployeePhone')?.touched)">
+            <div style="color:red;font-size: medium;">{{validation.message}}</div>
+      </div>
+    </div>
+  </div>
+    <br>
+    <br>
+
+   
+    
+    
+    <p>Fill the Form to enable Buttons.</p>
+    <div class="col-md-12 text-center">  
+    
+<button class="btn btn-success"  [disabled]="loginForm.invalid" (click)="showToasterSuccess()" >Submit</button> 
+<button class="btn btn-success" style="margin-left: 20px;" [disabled]="loginForm.invalid" (click)="showToasterInfo()" type="Reset" >Reset</button> 
+</div>
+
+  </form> 
+</div>
+</div>
+
+  <div class="collapse" id="empremove" >
+    
+    <div class="form-group">
+<form class="form" [formGroup]="deleteform" >
+
+    <!-- <label>
+      Employee Name:
+    </label>  -->
+    <div class="form-group">
+     <input id="delNumber" type="text"  class="form-control" formControlName="EmployeePSNO"  placeholder="Employee PSNO (8 Digit Employee Code)" style="width: 500px;">
+   
+    
+ 
+   <div *ngFor="let validation of validationMessages.EmployeePSNO">
+      <div *ngIf="deleteform.get('EmployeePSNO')?.hasError(validation.type) && (deleteform.get('EmployeePSNO')?.dirty || deleteform.get('EmployeePSNO')?.touched)">
+           <div style="color:red; font-size: medium;">{{validation.message}}</div> 
+           
+      </div>
+    </div>
+    </div>
+    <br>
+    <br>
+    <button class="btn btn-info" style="margin-left: 20px;"  [disabled]="deleteform.invalid" (click)="ondelete()">Delete</button> 
+    </form>
+  </div>
+</div>
+</div>

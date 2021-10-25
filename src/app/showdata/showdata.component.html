@@ -1,0 +1,61 @@
+
+     <!-- <p>
+      Name:{{Empname}}
+    </p> -->
+    <!-- <p> -->
+      <!-- PSNO:{{data2}}
+    </p>
+    <p>
+      Timing:{{data3}}
+    </p>
+    <p>
+      Location:{{data4}}
+      </p> 
+    <p>
+    Phone:{{data5}}
+    </p>  -->
+
+<!--   
+    
+ <table class="table">
+   <thead>
+   <tr>
+     <th>EmployeId</th>
+     <th>employeeName</th>
+     <th>Phone</th>
+<th>
+  Address
+</th>  
+</tr></thead>
+<tbody>
+  <tr *ngFor='let emp of result[0]' >
+    <td>
+{{emp.EmployeeName}}
+    </td>
+    <td>
+      {{emp.EmployeePSNO}}
+          </td>
+          <td>
+            {{emp.EmployeeTiming}}
+                </td>
+                <td>
+                  {{emp.EmployeeLocation}}
+                      </td>
+                      <td>
+                        {{emp.EmployeePhone}}
+                            </td>
+  </tr>
+</tbody>
+    -->
+     
+<div *ngFor="let item of EmployeDetails | keyvalue:returnZero ">
+  <br>
+  <div style="font-family: 'Times New Roman', Times, serif;font-size: larger;">
+{{item.key}} : {{item.value}}
+</div>
+</div>
+
+
+<!-- <li *ngIf="EmployeDetails==null">
+  {{showToasterError()}}
+</li> -->

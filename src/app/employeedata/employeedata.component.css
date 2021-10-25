@@ -1,0 +1,46 @@
+p
+{
+    padding-left: 500px;
+    
+}
+
+.container
+{
+    background-color:whitesmoke;
+    width: 800px;
+}
+
+.col-centered{
+    float: none;
+    margin: 0 auto;
+}
+
+.toast-success{background-color:#51A351!important;}
+.toast-error{background-color:#BD362F!important;}
+.toast-info{background-color:#2F96B4!important;}
+.toast-warning{background-color:#F89406!important;}
+
+.nbar
+{
+
+  text-align: center;
+ 
+  /* border: 2px solid #85dcb8;
+  border-radius: 10px; */
+  
+  
+}
+
+.a
+{
+    margin-left: -500px;
+}
+
+button .a
+{
+    position: absolute;
+    left: auto;
+    width: 100px;
+    height: 120px;
+    border: 3px solid blue;
+}
